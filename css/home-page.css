@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+}
+
+.side-pane{
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.side-pane .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 30px;
+    gap: 15px;
+    color: #716F6F;
+
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.side-pane .container:hover{
+    cursor: pointer;
+}
+
+.side-pane .container img {
+    width: 22px;
+    height: 22px
+}
+
+.side-pane .first-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #0F0E0E;
+    font-size: 30px;
+    font-weight: 700;
+    gap: -30px;
+}
+
+.side-pane .first-container img{
+    width: 87px;
+    height: 57px;
+    margin-right: -10px;
+}
+
+.side-pane .spaces-dropdown{
+    position: relative;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.side-pane .spaces-dropdown .dropdown-content .space-button{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 10px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.side-pane .spaces-dropdown .dropdown-content .space-button a{
+    color: #716F6F;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.side-pane .spaces-dropdown .dropdown-content .space-button .letter-box{
+    color: white;
+    padding: 3px 7px;
+    border-radius: 3px;
+}
+
+.side-pane .spaces-dropdown .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#kitchen-box {
+    background-color: #B22C2C;
+}
+
+#living-box {
+    background-color: #A86AF8;
+}
+
+#yard-box {
+    background-color: #F83FCF;
+}
+
+.side-pane .spaces-dropdown .title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 20px;
+    color: #0F0E0E;
+    font-size: 18px;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin-bottom: 5px;
+}
+
+.side-pane .spaces-dropdown .title img {
+    width: 22px;
+    height: 22px;
+    padding-bottom: 3px;
+}
+
+
+.main-pane {
+    display: grid;
+    grid-template-rows: 80px 1fr;
+}
+
+.main-pane .header {
+   background-color: rgb(254, 254, 254);
+   display: flex;
+   flex-direction: row;
+   gap: 15px;
+   padding-left: 30px;
+}
+
+.main-pane .header .calendar-board {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+}
+
+.main-pane .header .calendar-board .container{
+    background-color: #fcf6f6;
+    border-radius: 20px;
+    padding: 0px 8px;
+}
+
+.main-pane .header .calendar-board p{
+    font-size: 20px;
+}
+
+.main-pane .body {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   background-color: rgb(254, 254, 254);
+   padding: 0 40px;
+   gap: 15px;
+}
+
+.main-pane .body .col-one, .col-two, .col-three {
+    background-color: rgb(254, 254, 254);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-pane .body .chore-column {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: space-between;
+    width: 100%;
+    height: 85px;
+
+    align-items: center;
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 0px 4px 4px 0px rgba(121, 121, 121, 0.25);
+    position: relative;
+}
+
+.main-pane .body .col-one .chore-column .line hr{
+    width: 100%;
+    height: 5px;
+    background-color: yellow;
+    border: 0;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.main-pane .body .col-two .chore-column .line hr{
+    width: 100%;
+    height: 5px;
+    background-color: #D76AFE;
+    border: 0;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.main-pane .body .col-three .chore-column .line hr{
+    width: 100%;
+    height: 5px;
+    background-color: #60A93D;
+    border: 0;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.main-pane .body .chore-column img {
+    margin-right: 20px;
+}
+
+.main-pane .body .chore-column .name-count {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 10px;
+    left: 0px;
+    position: absolute;
+
+
+}
+
+.main-pane .body .chore-column .count {
+    border: solid;
+    padding: 3px 8px;
+    border-radius: 15px;
+    font-size: 13px;
+    stroke-width: 1px;
+    border-color: #EBEBEB;
+    color: #A8A8A8;
+}
+
+.main-pane .body .chore-column .name {
+    color: #4D4C4E;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.main-pane .body .chore-task {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 15px;
+    border-radius: 20px;
+
+    box-shadow: 0px 4px 4px 0px rgba(175, 175, 175, 0.25);
+    justify-content: space-between;
+}
+.chore-task:hover {
+    cursor: pointer;
+} 
+
+.main-pane .body .chore-task .details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-pane .body .chore-task .color {
+    width: 40px; /* You can adjust the width as needed */
+    height: 40px; /* Height matches width to make a square */;
+    border-radius: 20px;
+}
+
+.main-pane .body .chore-task .details .name {
+    color: #D9D9D9;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.main-pane .body .chore-task .details .desc {
+    color: #7A7979;
+    font-size: 20px;
+    font-weight: 700;
+    width: 70%;
+}

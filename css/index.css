@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FEFFEE;
+}
+
+.titles {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    row-gap: 0;
+    position: absolute;
+    top: 0;
+}
+
+.titles h1 {
+    padding-right: 50px;
+}
+
+.intro-text {
+    color: #494545;
+    font-family: Inter;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.titles .img-container{
+    width: 70px;
+}
+
+.titles .img-container img{
+    width: 80px;
+}
+
+.sign-in-box {
+    background-color: #FFF;
+    width: 403px;
+    height: 332px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: -3px 8px 18.1px 7px rgba(0, 0, 0, 0.13);
+    padding-top: 20px;
+    border-radius: 10px;
+}
+
+.sign-in-box input{
+    width: 350.979px;
+    height: 46.095px;
+    border: 1px solid #A3A0A0;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.sign-in-box p {
+    font-weight: bold;
+    color: #D1CBCB;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.input-text {
+    color: #5A5757;
+}
+
+.input-text::placeholder {
+    color: #a3a0a091;
+    padding-left: 10px;
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box img {
+    position: absolute;
+    right: 50px;
+    left: 90%;
+    top: 10px;
+    width: 20px;
+}
+
+.sign-in-box .btn {
+    background-color: #5BAC29;
+    width: 272.618px;
+    height: 37.534px;
+    border-radius: 35px;
+    border: none;
+
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 600;
+
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+.sign-in-box .btn:hover{
+    cursor: pointer;
+}
+
+.sign-in-box .bottom-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    color: #302DC3;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    text-decoration-line: underline;
+
+    margin-top: 40px;
+}
+
+.sign-in-box .box-label {
+    color: #5A5757;
+}

@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    visibility: hidden; /* Initially hidden */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.side-pane{
+    background-color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.side-pane .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 30px;
+    gap: 15px;
+    color: #716F6F;
+
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.side-pane .container img {
+    width: 22px;
+    height: 22px
+}
+
+.side-pane .first-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #0F0E0E;
+    font-size: 30px;
+    font-weight: 700;
+    gap: -30px;
+}
+
+.side-pane .first-container img{
+    width: 87px;
+    height: 57px;
+    margin-right: -10px;
+}
+
+.side-pane .spaces-dropdown{
+    position: relative;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.side-pane .spaces-dropdown .dropdown-content .space-button{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 10px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.side-pane .spaces-dropdown .dropdown-content .space-button a{
+    color: #716F6F;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.side-pane .spaces-dropdown .dropdown-content .space-button .letter-box{
+    color: white;
+    padding: 3px 7px;
+    border-radius: 3px;
+}
+
+.side-pane .spaces-dropdown .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#kitchen-box {
+    background-color: #B22C2C;
+}
+
+#living-box {
+    background-color: #A86AF8;
+}
+
+#yard-box {
+    background-color: #F83FCF;
+}
+
+.side-pane .spaces-dropdown .title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 20px;
+    color: #0F0E0E;
+    font-size: 18px;
+    font-weight: 700;
+    word-wrap: break-word;
+    margin-bottom: 5px;
+}
+
+.side-pane .spaces-dropdown .title img {
+    width: 22px;
+    height: 22px;
+    padding-bottom: 3px;
+}
+
+
+.main-pane {
+    display: grid;
+    grid-template-rows: 80px 1fr;
+}
+
+.main-pane .header {
+   background-color: rgb(254, 254, 254);
+   display: flex;
+   flex-direction: row;
+   gap: 15px;
+   padding-left: 30px;
+}
+
+.main-pane .header .calendar-board {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+}
+
+.main-pane .header .calendar-board .container{
+    background-color: #fcf6f6;
+    border-radius: 20px;
+    padding: 0px 8px;
+}
+
+.main-pane .header .calendar-board p{
+    font-size: 20px;
+}
+
+
+.main-pane .body {
+    background-color: rgb(250, 250, 250);
+   padding: 0 40px;
+
+   display: flex;
+   flex-direction: column;
+
+   position: relative;
+}
+
+.main-pane .body .title-add {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.main-pane .body .title-add p {
+    font-weight: bold;
+}
+
+.main-pane .body .title-add button {
+    padding: 10px 4px;
+    font-weight: bold;
+}
+
+.main-pane .body .chore-table {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-pane .body .chore-table .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5px 0;
+    border-bottom: solid lightgrey;
+}
+
+.row.headings {
+    background-color: lightgrey;
+    font-weight: bold;
+    padding: 8px 0;
+    margin-top: 10px;
+}
+
+
+
+.main-pane .body .chore-table .row .actions {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.pop-up {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 10px;
+    background-color: white;
+    position: absolute;
+    top: 150%;
+    left: 30%;
+    padding: 20px;
+    visibility: hidden;
+    z-index: 1001;
+}
+
+
+.pop-up .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.pop-up form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pop-up form input {
+    padding: 7px 0;
+}
+
+.pop-up #close-pop-up {
+    cursor: pointer;
+}
