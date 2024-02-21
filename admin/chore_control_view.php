@@ -1,6 +1,6 @@
 <?php
     include("../settings/core.php");
-    // check_login();
+    check_login();
 ?>
 
 
