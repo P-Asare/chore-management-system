@@ -1,3 +1,9 @@
+<?php
+    include("../settings/core.php");
+    check_login();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,8 +77,8 @@
                     </div>
                     <div><hr></div>
                     <div class="form-container">
-                        <form action="" method="" name="" id="">
-                            <input name="chore-name" type="text" placeholder="Chore name" pattern="[A-Za-z]+">
+                        <form action="" method="post" name="" id="">
+                            <input id="chore-name" name="chore-name" type="text" placeholder="Chore name" pattern="[A-Za-z]+">
                             <input id="submit-btn" name="submit" type="submit">
                         </form>
                     </div>
@@ -112,6 +118,17 @@
     let popUpBox = document.getElementById("pop");
     let overlay = document.getElementById("overlay");
     let closePopUp = document.getElementById("close-pop-up")
+    let submitBtn = document.getElementById("submit-btn");
+
+    function validateForm(event){
+        let choreName = document.getElementById("chore-name").value;
+        let pattern = /^[A-Za-z]+$/;
+
+        if (!pattern.test(choreName)){
+            alert('Chore Name should contain only letters');
+            event.preventDefault();
+        }
+    }
 
     addChoreButton.addEventListener("click", function() {
         popUpBox.style.visibility = "visible";
@@ -122,5 +139,9 @@
         popUpBox.style.visibility = "hidden";
         overlay.style.visibility = "hidden";
     })
+
+    submitBtn.addEventListener("click", validateForm);
+
+    
 </script>
 </html>
