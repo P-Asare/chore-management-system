@@ -1,6 +1,6 @@
 <?php
     include("../settings/core.php");
-    check_login();
+    // check_login();
 ?>
 
 
@@ -79,7 +79,7 @@
                     <div><hr></div>
                     <div class="form-container">
                         <form action="../action/add_score_action.php" method="post" name="add-chore-form" id="">
-                            <input id="chore-name" name="chore-name" type="text" placeholder="Chore name" pattern="[A-Za-z]+">
+                            <input id="chore-name" name="chore-name" type="text" placeholder="Chore name" pattern="[A-Za-z\s]+">
                             <input id="submit-btn" name="submit" type="submit">
                         </form>
                     </div>
@@ -123,10 +123,10 @@
 
     function validateForm(event){
         let choreName = document.getElementById("chore-name").value;
-        let pattern = /^[A-Za-z]+$/;
+        let pattern = /^[A-Za-z\s]+$/;
 
         if (!pattern.test(choreName)){
-            alert('Chore Name should contain only letters');
+            swal('Error',"Can't add chore. Only letters allowed.", 'error');
             event.preventDefault();
         }
     }
