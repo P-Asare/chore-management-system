@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slaveme</title>
     <link rel="stylesheet" href="../css/admin-management.css">
+    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
 </head>
 <body>
     <div class="overlay" id="overlay">&nbsp;</div>
@@ -77,7 +78,7 @@
                     </div>
                     <div><hr></div>
                     <div class="form-container">
-                        <form action="" method="post" name="" id="">
+                        <form action="../action/add_score_action.php" method="post" name="add-chore-form" id="">
                             <input id="chore-name" name="chore-name" type="text" placeholder="Chore name" pattern="[A-Za-z]+">
                             <input id="submit-btn" name="submit" type="submit">
                         </form>
@@ -141,6 +142,14 @@
     })
 
     submitBtn.addEventListener("click", validateForm);
+
+    document.addEventListener("DOMContentLoaded", function (){
+        <?php
+            if (isset($_GET['msg']) && $_GET['msg'] == 'inerror'){
+                echo "swal('Error','Can't add chore', 'error');";
+            }
+        ?>
+    })
 
     
 </script>
