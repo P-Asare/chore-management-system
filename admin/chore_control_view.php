@@ -13,6 +13,7 @@
     <title>Slaveme</title>
     <link rel="stylesheet" href="../css/admin-management.css">
     <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
     <div class="overlay" id="overlay">&nbsp;</div>
