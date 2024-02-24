@@ -11,13 +11,14 @@
         mysqli_stmt_execute($stmt);
         
         $result = mysqli_stmt_get_result($stmt);
-
         if ($result){
             header("Location: ../admin/chore_control_view.php");
+            exit();
         }
         else{
-
-            header("Location: ../admin/chore_control_view.php?msg=dcerror");
+            // missing error message
+            header("Location: ../admin/chore_control_view.php");
+            exit();
         }
     }
 ?>

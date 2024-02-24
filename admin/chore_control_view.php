@@ -144,9 +144,9 @@
             if (isset($_GET['msg']) && $_GET['msg'] == 'inerror'){
                 echo "swal('Error','Can't add chore', 'error');";
             }
-            else if(isset($_GET['msg']) && $_GET['msg'] == 'dcerror'){
-                echo "swal('Error', 'Can't delete chore', 'error');";
-            }
+            // if(isset($_GET['msg']) && $_GET['msg'] == 'dcerror'){
+            //     echo "swal('Error', 'Can't delete chore', 'error');";
+            // }
         ?>
     })
 
