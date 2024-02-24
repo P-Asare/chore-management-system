@@ -10,7 +10,9 @@
                 echo "<div class='row'>
                 <div>".$row['chorename']."</div>
                     <div class='actions'>
-                        <div><span class='material-symbols-outlined'>edit</span></div>
+                        <div>
+                            <a style='color:black;' href='../action/edit_a_chore_action.php?id=".$row['cid']."'>
+                            <span class='material-symbols-outlined'>edit</span></div>
                         <div>
                             <a style='color:rgb(241, 143, 143);' href='../action/delete_chore_action.php?id=".$row['cid']."'>
                                 <span class='material-symbols-outlined'>delete</span>
