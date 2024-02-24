@@ -1,6 +1,7 @@
 <?php
     include("../settings/core.php");
-    check_login();
+    include("../functions/chore_fxn.php")
+    // check_login();
 ?>
 
 
@@ -99,15 +100,9 @@
                             Actions
                         </div>
                     </div>
-                    <div class="row">
-                        <div>
-                            Sweep
-                        </div>
-                        <div class="actions">
-                            <div> Edit</div>
-                            <div>Delete</div>
-                        </div>
-                    </div>
+                    <?php
+                        display_rows();
+                    ?>
                 </div>
             </div>
             

@@ -4,7 +4,7 @@
 
     function all_chores(){
         global $conn;
-        
+
         $sql = "SELECT * FROM chores";
 
         $result = mysqli_query($conn, $sql);
