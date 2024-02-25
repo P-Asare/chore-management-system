@@ -18,9 +18,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit chore</title>
+    <style>
+        body {
+            background-color: darkgrey;
+        }
+        .pop-up {
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            gap: 10px;
+            background-color: white;
+            padding: 20px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: solid;
+        }
+
+
+        .pop-up .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+
+        .pop-up form{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .pop-up form input {
+            padding: 7px 0;
+        }
+
+    </style>
 </head>
 <body>
-
+    <div class="pop-up" id="pop">
+        <div class="header">
+            <div><p><strong>Edit a chore</strong></p></div>
+        </div>
+        <div><hr></div>
+        <div class="form-container">
+            <form action="../action/add_score_action.php" method="post" name="add-chore-form" id="">
+                <input id="chore-name" name="chore-name" type="text" value="<?php echo $id_row['chorename']; ?>" placeholder="Chore name" pattern="[A-Za-z\s]+">
+                <input name="chore-id" type="hidden" value="<?php echo $c_id; ?>">
+                <input id="submit-btn" name="submit" type="submit">
+            </form>
+        </div>
+    </div>
 
     
 </body>
