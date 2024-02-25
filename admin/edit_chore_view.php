@@ -64,7 +64,7 @@
         </div>
         <div><hr></div>
         <div class="form-container">
-            <form action="#" method="post" name="add-chore-form" id="">
+            <form action="../action/edit_a_chore_action.php" method="post" name="add-chore-form" id="">
                 <input id="chore-name" name="chore-name" type="text" value="<?php echo $id_row['chorename']; ?>" placeholder="Chore name" pattern="[A-Za-z\s]+">
                 <input name="chore-id" type="hidden" value="<?php echo $c_id; ?>">
                 <input id="submit-btn" name="submit" type="submit">
