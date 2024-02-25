@@ -18,6 +18,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit chore</title>
+    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
     <style>
         body {
             background-color: darkgrey;
@@ -63,7 +64,7 @@
         </div>
         <div><hr></div>
         <div class="form-container">
-            <form action="../action/add_score_action.php" method="post" name="add-chore-form" id="">
+            <form action="#" method="post" name="add-chore-form" id="">
                 <input id="chore-name" name="chore-name" type="text" value="<?php echo $id_row['chorename']; ?>" placeholder="Chore name" pattern="[A-Za-z\s]+">
                 <input name="chore-id" type="hidden" value="<?php echo $c_id; ?>">
                 <input id="submit-btn" name="submit" type="submit">
@@ -73,4 +74,20 @@
 
     
 </body>
+<script>
+
+    let submitBtn = document.getElementById("submit-btn");
+
+    function validateForm(event){
+        let choreName = document.getElementById("chore-name").value;
+        let pattern = /^[A-Za-z\s]+$/;
+
+        if (!pattern.test(choreName)){
+            swal('Error',"Can't add chore. Only letters allowed.", 'error');
+            event.preventDefault();
+        }
+    }
+
+    submitBtn.addEventListener("click", validateForm);
+</script>
 </html>
