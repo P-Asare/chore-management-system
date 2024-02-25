@@ -1,6 +1,6 @@
 <?php
     include("../settings/core.php");
-    // check_login();
+    check_login();
     include("../action/get_a_chore_action.php");
 
     if (isset($_GET['id'])){
