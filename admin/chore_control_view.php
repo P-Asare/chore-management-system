@@ -1,6 +1,7 @@
 <?php
     include("../settings/core.php");
-    check_login();
+    include("../functions/chore_fxn.php")
+    // check_login();
 ?>
 
 
@@ -12,6 +13,7 @@
     <title>Slaveme</title>
     <link rel="stylesheet" href="../css/admin-management.css">
     <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
     <div class="overlay" id="overlay">&nbsp;</div>
@@ -99,15 +101,9 @@
                             Actions
                         </div>
                     </div>
-                    <div class="row">
-                        <div>
-                            Sweep
-                        </div>
-                        <div class="actions">
-                            <div> Edit</div>
-                            <div>Delete</div>
-                        </div>
-                    </div>
+                    <?php
+                        display_rows();
+                    ?>
                 </div>
             </div>
             
@@ -148,6 +144,9 @@
             if (isset($_GET['msg']) && $_GET['msg'] == 'inerror'){
                 echo "swal('Error','Can't add chore', 'error');";
             }
+            // if(isset($_GET['msg']) && $_GET['msg'] == 'dcerror'){
+            //     echo "swal('Error', 'Can't delete chore', 'error');";
+            // }
         ?>
     })
 
