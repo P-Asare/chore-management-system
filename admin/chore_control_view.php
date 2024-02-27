@@ -1,7 +1,7 @@
 <?php
     include("../settings/core.php");
     include("../functions/chore_fxn.php");
-    check_login();
+    // check_login();
 ?>
 
 
