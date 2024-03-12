@@ -80,7 +80,7 @@
                     </div>
                     <div><hr></div>
                     <div class="form-container">
-                        <form action="" method="" name="" id="">
+                        <form action="../action/assign_chore_action.php" method="post" name="assignment-form" id="assignment-form">
                             <label for="chore-name">Assignee</label>
                             <select name="assignee" type="text">
                                 <option value="">Assign Person</option>
