@@ -129,28 +129,10 @@
                             Actions
                         </div>
                     </div>
-                    <div class="row">
-                        <div>
-                            Sweep
-                        </div>
-                        <div>
-                            <?php display_assignments()?>
-                        </div>
-                        <div>
-                            1-Feb-2024
-                        </div>
-                        <div>
-                            2-Feb-2024
-                        </div>
-                        <div>
-                            InProgress
-                        </div>
-                        <div class="actions">
-                            <div class="material-symbols-outlined"> edit</div>
-                            <div class="material-symbols-outlined">delete</div>
-                            <div class="material-symbols-outlined">done</div>
-                        </div>
-                    </div>
+                    <!-- Display all the assigned chores in database-->
+                    <?php 
+                        display_assignments();
+                    ?>
                 </div>
             </div>
             
