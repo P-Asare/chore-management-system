@@ -20,5 +20,8 @@
         }
     }
 
+    // Array of all users and their details
+    $assignees = get_all_assignees();
+
 
 ?>

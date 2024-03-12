@@ -83,7 +83,9 @@
                             <label for="chore-name">Assignee</label>
                             <select name="assignee" type="text">
                                 <option value="">Assign Person</option>
-                                <option value="0">Palal</option>
+                                <?php foreach($assignees as $assignee): ?>
+                                    <option value="<?php echo $assignee["pid"]; ?>"><?php echo $assignee["fname"]." ".$assignee["lname"]; ?></option>
+                                <?php endforeach; ?>
                             </select>
                             <label for="chore-name">Assign chore</label>
                             <select name="chore" type="text">
