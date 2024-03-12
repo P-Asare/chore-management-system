@@ -91,7 +91,9 @@
                             <label for="chore-name">Assign chore</label>
                             <select name="chore" type="text">
                                 <option value="">Assign chore</option>
-                                <option value="0">Sweep</option>
+                                <?php foreach($chores as $chore): ?>
+                                    <option value="<?php echo $chore["cid"]; ?>"><?php echo $chore["chorename"]; ?></option>
+                                <?php endforeach; ?>
                             </select>
                             <label for="chore-name">Due Date</label>
                             <input name="due-date" type="date" required>
