@@ -2,6 +2,7 @@
     include("../settings/core.php");
     include("../functions/select_assignee_fxn.php");
     include("../functions/select_chore_fxn.php");
+    include("../functions/get_all_assignments_fxn.php");
     // check_login();
 
 ?>
@@ -133,7 +134,7 @@
                             Sweep
                         </div>
                         <div>
-                            Palal Asare
+                            <?php display_assignments()?>
                         </div>
                         <div>
                             1-Feb-2024
