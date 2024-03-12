@@ -16,7 +16,7 @@
         $sql = "INSERT INTO assignment (cid, sid, date_assign, date_due, who_assigned) VALUES (?,?,?,?,?)";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "iissi", $chore, $status, $date_assigned, $due_date, $ass);
-        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_execute($stmt);
 
         $assignmentId = mysqli_insert_id($conn); // Get id of most recent insertion
 
@@ -24,7 +24,17 @@
         $sql2 = "INSERT INTO assigned_people (pid, assignmentid) VALUES (?, ?)";
         $stmt2 = mysqli_prepare($conn, $sql2);
         mysqli_stmt_bind_param($stmt2, "ii", $assigned_to, $assignmentId);
-        mysqli_stmt_execute($stmt2);
+        $result2 = mysqli_stmt_execute($stmt2);
+
+        if($result && $result2){
+            header("Location: ../admin/assign-chore-view.php");
+            die();
+        }
+        else{
+            die("Unsuccessful query: ".mysqli_error($conn));
+        }
+
+
 
     }
 ?>
