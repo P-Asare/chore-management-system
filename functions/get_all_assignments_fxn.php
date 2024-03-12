@@ -22,7 +22,7 @@
             echo '<div>'.$status.'</div>';
             echo '<div class="actions">';
             echo '<div class="material-symbols-outlined"> edit</div>';
-            echo '<a href="../action/delete_assignment_action.php?aid='.$assignment['assignmentid'].'">';
+            echo '<a style="color: red;" href="../action/delete_assignment_action.php?aid='.$assignment['assignmentid'].'">';
             echo '<div class="material-symbols-outlined"> delete</div></a>';
             echo '<div class="material-symbols-outlined"> done</div>';
             echo '</div>';
