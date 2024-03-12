@@ -74,11 +74,17 @@
                     <div class="form-container">
                         <form action="" method="" name="" id="">
                             <label for="chore-name">Assignee</label>
-                            <input name="chore-name" type="text" placeholder="Assignee" pattern="[A-Za-z]+">
+                            <select name="assignee" type="text">
+                                <option value="">Assign Person</option>
+                                <option value="0">Palal</option>
+                            </select>
                             <label for="chore-name">Assign chore</label>
-                            <input name="chore-name" type="text" placeholder="Assign chore" pattern="[A-Za-z]+">
+                            <select name="chore" type="text">
+                                <option value="">Assign chore</option>
+                                <option value="0">Sweep</option>
+                            </select>
                             <label for="chore-name">Due Date</label>
-                            <input name="chore-name" type="text" placeholder="12-Feb-24" pattern="[0-9]{2}-[A-za-z]{3}-[0-9]{2}">
+                            <input name="due-date" type="date" required>
                             <input id="submit-btn" name="submit" type="submit">
                         </form>
                     </div>
