@@ -7,6 +7,11 @@
     function display_assignments(){
         $assignments = get_all_assignments();
 
+        // Prevent error from empty array
+        if($assignments == null){
+            return;
+        }
+
         foreach($assignments as $assignment){
     
             $chorename = get_chore($assignment['cid'])['chorename'];
