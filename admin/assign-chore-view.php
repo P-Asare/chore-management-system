@@ -1,6 +1,7 @@
 <?php
     include("../settings/core.php");
     include("../functions/select_assignee_fxn.php");
+    include("../functions/select_chore_fxn.php");
     // check_login();
 
 ?>
