@@ -106,15 +106,9 @@
                         </div>
                         <div><img src="../icons/mdi_add.svg" alt=""></div>
                     </div>
-                    <div class="chore-task">
-                        <div class="details">
-                            <div><p class="name">Palal Asare > Chores</p></div>
-                            <div><p class="desc">Cleanfloor</p></div>
-                            <div><img style="opacity: 0.5" src="../icons/tabler_flag-filled.svg" alt="picture of flag"></div>
-                        </div>
-                        <div class="color" style="background-color: #ffd3331f">
-                        </div>
-                    </div>
+                    <?php 
+                        list_assignments($in_progress);
+                    ?>
                 </div>
                 <div class="col-three">
                     <div class="chore-column">
