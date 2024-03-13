@@ -1,9 +1,11 @@
 <?php
     include("../settings/core.php");
-    include("../functions/chore_fxn.php");
+    include("../functions/select_assignee_fxn.php");
+    include("../functions/select_chore_fxn.php");
+    include("../functions/get_all_assignments_fxn.php");
     // check_login();
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,8 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slaveme</title>
-    <link rel="stylesheet" href="../css/admin-management.css">
-    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
+    <link rel="stylesheet" href="../css/admin-assignment.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
@@ -32,11 +33,11 @@
         </div>
         <div class="container">
             <div><img src="../icons/la_broom.svg" alt="home icon"></div>
-            <div><p style="color: rgb(16, 148, 16); font-weight: bold;">Manage Chores</p></div>
+            <div><p>Manage Chores</p></div>
         </div>
         <div class="container">
             <div><img src="../icons/la_broom.svg" alt="home icon"></div>
-            <div><p>Assign Chores</p></div>
+            <div><p style="color: rgb(16, 148, 16); font-weight: bold;">Assign Chores</p></div>
         </div>
         <div class="spaces-dropdown" id="spaces-dropdown">
             <div class="title">
@@ -75,13 +76,28 @@
             <div class="body">
                 <div class="pop-up" id="pop">
                     <div class="header">
-                        <div><p><strong>Add a chore</strong></p></div>
+                        <div><p><strong>Assign a chore</strong></p></div>
                         <div id="close-pop-up"><p>X</p></div>
                     </div>
                     <div><hr></div>
                     <div class="form-container">
-                        <form action="../action/add_score_action.php" method="post" name="add-chore-form" id="">
-                            <input id="chore-name" name="chore-name" type="text" placeholder="Chore name" pattern="[A-Za-z\s]+">
+                        <form action="../action/assign_chore_action.php" method="post" name="assignment-form" id="assignment-form">
+                            <label for="chore-name">Assignee</label>
+                            <select name="assignee" type="text">
+                                <option value="">Assign Person</option>
+                                <?php foreach($assignees as $assignee): ?>
+                                    <option value="<?php echo $assignee["pid"]; ?>"><?php echo $assignee["fname"]." ".$assignee["lname"]; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                            <label for="chore-name">Assign chore</label>
+                            <select name="chore" type="text">
+                                <option value="">Assign chore</option>
+                                <?php foreach($chores as $chore): ?>
+                                    <option value="<?php echo $chore["cid"]; ?>"><?php echo $chore["chorename"]; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                            <label for="chore-name">Due Date</label>
+                            <input name="due-date" type="date" required>
                             <input id="submit-btn" name="submit" type="submit">
                         </form>
                     </div>
@@ -90,19 +106,32 @@
 
                 <div class="title-add">
                     <div><p>Chore List</p></div>
-                    <div><button id="add-chore">Add a chore</button></div>
+                    <div><button id="assign-chore">Assign a chore</button></div>
                 </div>
                 <div class="chore-table">
                     <div class="row headings">
                         <div>
                             Chore name
                         </div>
+                        <div>
+                            Assigned By
+                        </div>
+                        <div>
+                            Date Assigned
+                        </div>
+                        <div>
+                            Date Due
+                        </div>
+                        <div>
+                            Chore Status
+                        </div>
                         <div class="actions">
                             Actions
                         </div>
                     </div>
-                    <?php
-                        display_rows();
+                    <!-- Display all the assigned chores in database-->
+                    <?php 
+                        display_assignments();
                     ?>
                 </div>
             </div>
@@ -111,21 +140,10 @@
     </div>
 </body>
 <script>
-    let addChoreButton = document.getElementById("add-chore");
+    let addChoreButton = document.getElementById("assign-chore");
     let popUpBox = document.getElementById("pop");
     let overlay = document.getElementById("overlay");
     let closePopUp = document.getElementById("close-pop-up")
-    let submitBtn = document.getElementById("submit-btn");
-
-    function validateForm(event){
-        let choreName = document.getElementById("chore-name").value;
-        let pattern = /^[A-Za-z\s]+$/;
-
-        if (!pattern.test(choreName)){
-            swal('Error',"Can't add chore. Only letters allowed.", 'error');
-            event.preventDefault();
-        }
-    }
 
     addChoreButton.addEventListener("click", function() {
         popUpBox.style.visibility = "visible";
@@ -136,20 +154,5 @@
         popUpBox.style.visibility = "hidden";
         overlay.style.visibility = "hidden";
     })
-
-    submitBtn.addEventListener("click", validateForm);
-
-    document.addEventListener("DOMContentLoaded", function (){
-        <?php
-            if (isset($_GET['msg']) && $_GET['msg'] == 'inerror'){
-                echo "swal('Error','Can't add chore', 'error');";
-            }
-            // if(isset($_GET['msg']) && $_GET['msg'] == 'dcerror'){
-            //     echo "swal('Error', 'Can't delete chore', 'error');";
-            // }
-        ?>
-    })
-
-    
 </script>
 </html>

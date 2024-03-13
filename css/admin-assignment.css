@@ -191,7 +191,7 @@ body {
 
 .main-pane .body .chore-table .row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     padding: 5px 0;
     border-bottom: solid lightgrey;
 }
@@ -208,7 +208,7 @@ body {
 .main-pane .body .chore-table .row .actions {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 10px;
 }
 
 .pop-up {
