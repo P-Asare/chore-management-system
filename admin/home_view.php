@@ -127,6 +127,7 @@
 </body>
 <script>
     const choreControl = document.getElementById("chore-control");
+    const assignChores = document.getElementById("assign-chores");
     let choreTask = document.querySelectorAll(".chore-task")
 
     choreTask.forEach(element => {
@@ -135,9 +136,13 @@
         })
     });
 
-    // route to chore management page
+    // route to appropriate pages
     choreControl.addEventListener("click", function(){
         window.location.replace("chore_control_view.php")
+    })
+
+    assignChores.addEventListener("click", function(){
+        window.location.replace("assign-chore-view.php")
     })
 </script>
 </html>
