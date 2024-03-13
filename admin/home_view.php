@@ -18,7 +18,7 @@
         </div>
         <div class="container">
             <div><img src="../icons/ant-design_home-outlined.svg" alt="home icon"></div>
-            <div><p>Home</p></div>
+            <div><p style="color: rgb(16, 148, 16); font-weight: bold;">Home</p></div>
         </div>
         <div class="container">
             <div><img src="../icons/bell.svg" alt="home icon"></div>
@@ -73,7 +73,7 @@
                         <div class="line"><hr></div>
                         <div class="name-count">
                             <div class="name"><p>All Chores</p></div>
-                            <div class="count"><p><?php echo count($all_assignments); ?></p></div>
+                            <div class="count"><p><?php echo ($all_assignments === null) ? 0 : count($all_assignments); ?></p></div>
                         </div>
                         <div><img src="../icons/mdi_add.svg" alt=""></div>
                     </div>
