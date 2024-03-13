@@ -180,7 +180,7 @@
     let homePage = document.getElementById("home-page")
 
     homePage.addEventListener("click", function(){
-        window.location.replace("home-page.html")
+        window.location.replace("home-page.php")
     })
 </script>
 </html>
