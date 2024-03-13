@@ -78,7 +78,7 @@
                         <div><img src="../icons/mdi_add.svg" alt=""></div>
                     </div>
                     <?php 
-                        list_assignments($all_assignments);
+                        list_assignments($recent);
                     ?>
     
                 </div>

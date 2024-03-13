@@ -4,7 +4,7 @@
     if(isset($_POST['submit'])){
 
         $chore = $_POST['chore'];
-        $status = 1;
+        $status = 2;
         $date_assigned = date('Y-m-d');
         $due_date = $_POST['due-date'];
         // $assigned_by = $_SESSION['user-id'];
