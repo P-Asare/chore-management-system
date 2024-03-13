@@ -1,11 +1,9 @@
 <?php
-    include("../functions/home_fxn.php");
     include("../settings/core.php");
-
     check_login();
 
-    if(get_role_id() == 3){
-        header("Location: ../view/chore-management.html");
+    if(get_role_id() != 3){
+        header("Location: ../admin/home_view.php");
     }
 ?>
 
@@ -15,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slaveme</title>
-    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/home-page.css">
 </head>
 <body>
     <div class="side-pane">
@@ -31,13 +29,9 @@
             <div><img src="../icons/bell.svg" alt="home icon"></div>
             <div><p>Notifications</p></div>
         </div>
-        <div class="container" id="chore-control">
+        <div class="container">
             <div><img src="../icons/la_broom.svg" alt="home icon"></div>
-            <div><p>Manage Chores</p></div>
-        </div>
-        <div class="container" id="assign-chores">
-            <div><img src="../icons/la_broom.svg" alt="home icon"></div>
-            <div><p>Assign Chores</p></div>
+            <div id="chores"><p>Chores</p></div>
         </div>
         <div class="spaces-dropdown" id="spaces-dropdown">
             <div class="title">
@@ -79,14 +73,29 @@
                     <div class="chore-column">
                         <div class="line"><hr></div>
                         <div class="name-count">
-                            <div class="name"><p>All Chores</p></div>
-                            <div class="count"><p><?php echo ($all_assignments === null) ? 0 : count($all_assignments); ?></p></div>
+                            <div class="name"><p>ToDo</p></div>
+                            <div class="count"><p>2</p></div>
                         </div>
                         <div><img src="../icons/mdi_add.svg" alt=""></div>
                     </div>
-                    <?php 
-                        list_assignments($recent);
-                    ?>
+                    <div class="chore-task">
+                        <div class="details">
+                            <div><p class="name">Palal Asare > Chores</p></div>
+                            <div><p class="desc">Scrub Cabinets, top to bottom</p></div>
+                            <div><img style="opacity: 0.5" src="../icons/tabler_flag-filled.svg" alt="picture of flag"></div>
+                        </div>
+                        <div class="color" style="background-color: #ffd3331f">
+                        </div>
+                    </div>
+                    <div class="chore-task">
+                        <div class="details">
+                            <div><p class="name">Palal Asare > Chores</p></div>
+                            <div><p class="desc">Sweep,floors</p></div>
+                            <div><img style="opacity: 0.4" src="../icons/tabler_flag-filled.svg" alt="picture of flag"></div>
+                        </div>
+                        <div class="color" style="background-color: #b9bff825">
+                        </div>
+                    </div>
     
                 </div>
                 <div class="col-two">
@@ -94,62 +103,74 @@
                         <div class="line"><hr></div>
                         <div class="name-count">
                             <div class="name"><p>InProgress</p></div>
-                            <div class="count"><p><?php echo ($in_progress === null) ? 0 : count($in_progress); ?></p></div>
+                            <div class="count"><p>1</p></div>
                         </div>
                         <div><img src="../icons/mdi_add.svg" alt=""></div>
                     </div>
-                    <?php 
-                        list_assignments($in_progress);
-                    ?>
+                    <div class="chore-task">
+                        <div class="details">
+                            <div><p class="name">Palal Asare > Chores</p></div>
+                            <div><p class="desc">Cleanfloor</p></div>
+                            <div><img style="opacity: 0.5" src="../icons/tabler_flag-filled.svg" alt="picture of flag"></div>
+                        </div>
+                        <div class="color" style="background-color: #ffd3331f">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-three">
                     <div class="chore-column">
                         <div class="line"><hr></div>
                         <div class="name-count">
-                            <div class="name"><p>Incomplete</p></div>
-                            <div class="count"><p><?php echo ($incomplete === null) ? 0 : count($incomplete); ?></p></div>
+                            <div class="name"><p>Closed</p></div>
+                            <div class="count"><p>3</p></div>
                         </div>
                         <div><img src="../icons/mdi_add.svg" alt=""></div>
                     </div>
-                    <?php 
-                        list_assignments($incomplete);
-                    ?>
-                </div>
-                <div class="col-two extra">
-                    <div class="chore-column">
-                        <div class="line"><hr></div>
-                        <div class="name-count">
-                            <div class="name"><p>Completed</p></div>
-                            <div class="count"><p><?php echo ($complete === null) ? 0 : count($complete); ?></p></div>
+                    <div class="chore-task">
+                        <div class="details">
+                            <div><p class="name">Palal Asare > Chores</p></div>
+                            <div><p class="desc">Cleanfloor</p></div>
+                            <div><img style="opacity: 0.5" src="../icons/tabler_flag-filled.svg" alt="picture of flag"></div>
                         </div>
-                        <div><img src="../icons/mdi_add.svg" alt=""></div>
+                        <div class="color" style="background-color: #ffd3331f">
+                        </div>
                     </div>
-                    <?php 
-                        list_assignments($complete);
-                    ?>
+                    <div class="chore-task">
+                        <div class="details">
+                            <div><p class="name">Palal Asare > Chores</p></div>
+                            <div><p class="desc">Cleanfloor</p></div>
+                            <div><img style="opacity: 0.5" src="../icons/tabler_flag-filled.svg" alt="picture of flag"></div>
+                        </div>
+                        <div class="color" style="background-color: #ffd3331f">
+                        </div>
+                    </div>
+                    <div class="chore-task">
+                        <div class="details">
+                            <div><p class="name">Palal Asare > Chores</p></div>
+                            <div><p class="desc">Cleanfloor</p></div>
+                            <div><img style="opacity: 0.5" src="../icons/tabler_flag-filled.svg" alt="picture of flag"></div>
+                        </div>
+                        <div class="color" style="background-color: #ffd3331f">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
 <script>
-    const choreControl = document.getElementById("chore-control");
-    const assignChores = document.getElementById("assign-chores");
+    let chores = document.getElementById("chores")
     let choreTask = document.querySelectorAll(".chore-task")
 
     choreTask.forEach(element => {
         element.addEventListener("click", function(){
-            window.location.replace("chore_control_view.php")
+            window.location.replace("chore-management.php")
         })
     });
 
-    // route to appropriate pages
-    choreControl.addEventListener("click", function(){
-        window.location.replace("chore_control_view.php")
+    chores.addEventListener("click", function(){
+        window.location.replace("chore-management.php")
     })
 
-    assignChores.addEventListener("click", function(){
-        window.location.replace("assign-chore-view.php")
-    })
 </script>
 </html>

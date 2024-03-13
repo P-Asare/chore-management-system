@@ -1,7 +1,11 @@
 <?php
     include("../settings/core.php");
     include("../functions/chore_fxn.php");
-    // check_login();
+    check_login();
+    
+    if(get_role_id() == 3){
+        header("Location: ../view/chore-management.html");
+    }
 ?>
 
 

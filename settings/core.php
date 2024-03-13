@@ -11,7 +11,7 @@
     }
 
     function get_role_id(){
-        if (!isset($_SESSION['role-id'])){
+        if (isset($_SESSION['role-id'])){
             return $_SESSION['role-id'];
         }
     }

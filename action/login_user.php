@@ -30,7 +30,7 @@
             $_SESSION['user-id'] = $row['pid'];
             $_SESSION['role-id'] = $row['rid'];
 
-            header("Location: ../view/home-page.html");
+            header("Location: ../view/home-page.php");
             exit();
         }
         else{

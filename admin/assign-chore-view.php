@@ -3,7 +3,11 @@
     include("../functions/select_assignee_fxn.php");
     include("../functions/select_chore_fxn.php");
     include("../functions/get_all_assignments_fxn.php");
-    // check_login();
+    check_login();
+
+    if(get_role_id() == 3){
+        header("Location: ../view/chore-management.html");
+    }
 
 ?>
 
