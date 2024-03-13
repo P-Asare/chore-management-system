@@ -22,7 +22,7 @@
             <div><img src="../images/slave-me-logo-removebg-preview 1.png" alt="image of logo"></div>
             <div><p>Slaveme</p></div>
         </div>
-        <div class="container">
+        <div class="container" id="home-view">
             <div><img src="../icons/ant-design_home-outlined.svg" alt="home icon"></div>
             <div><p>Home</p></div>
         </div>
@@ -34,7 +34,7 @@
             <div><img src="../icons/la_broom.svg" alt="home icon"></div>
             <div><p style="color: rgb(16, 148, 16); font-weight: bold;">Manage Chores</p></div>
         </div>
-        <div class="container">
+        <div class="container" id="assign-chores">
             <div><img src="../icons/la_broom.svg" alt="home icon"></div>
             <div><p>Assign Chores</p></div>
         </div>
@@ -117,6 +117,9 @@
     let closePopUp = document.getElementById("close-pop-up")
     let submitBtn = document.getElementById("submit-btn");
 
+    const assignChores = document.getElementById("assign-chores");
+    const homeView = document.getElementById("home-view");
+
     function validateForm(event){
         let choreName = document.getElementById("chore-name").value;
         let pattern = /^[A-Za-z\s]+$/;
@@ -148,6 +151,15 @@
             //     echo "swal('Error', 'Can't delete chore', 'error');";
             // }
         ?>
+    })
+
+    // route to appropriate pages
+    homeView.addEventListener("click", function(){
+        window.location.replace("home_view.php")
+    })
+
+    assignChores.addEventListener("click", function(){
+        window.location.replace("assign-chore-view.php")
     })
 
     
