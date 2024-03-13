@@ -24,11 +24,11 @@
             <div><img src="../icons/bell.svg" alt="home icon"></div>
             <div><p>Notifications</p></div>
         </div>
-        <div class="container">
+        <div class="container" id="chore-control">
             <div><img src="../icons/la_broom.svg" alt="home icon"></div>
             <div><p>Manage Chores</p></div>
         </div>
-        <div class="container">
+        <div class="container" id="assign-chores">
             <div><img src="../icons/la_broom.svg" alt="home icon"></div>
             <div><p>Assign Chores</p></div>
         </div>
@@ -126,6 +126,7 @@
     </div>
 </body>
 <script>
+    const choreControl = document.getElementById("chore-control");
     let choreTask = document.querySelectorAll(".chore-task")
 
     choreTask.forEach(element => {
@@ -133,5 +134,10 @@
             window.location.replace("chore_control_view.php")
         })
     });
+
+    // route to chore management page
+    choreControl.addEventListener("click", function(){
+        window.location.replace("chore_control_view.php")
+    })
 </script>
 </html>
