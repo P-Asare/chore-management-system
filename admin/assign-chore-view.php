@@ -23,7 +23,7 @@
             <div><img src="../images/slave-me-logo-removebg-preview 1.png" alt="image of logo"></div>
             <div><p>Slaveme</p></div>
         </div>
-        <div class="container">
+        <div class="container" id="home-view">
             <div><img src="../icons/ant-design_home-outlined.svg" alt="home icon"></div>
             <div><p>Home</p></div>
         </div>
@@ -31,7 +31,7 @@
             <div><img src="../icons/bell.svg" alt="home icon"></div>
             <div><p>Notifications</p></div>
         </div>
-        <div class="container">
+        <div class="container" id="chore-control">
             <div><img src="../icons/la_broom.svg" alt="home icon"></div>
             <div><p>Manage Chores</p></div>
         </div>
@@ -145,6 +145,19 @@
     let overlay = document.getElementById("overlay");
     let closePopUp = document.getElementById("close-pop-up")
 
+    const homeView = document.getElementById("home-view");
+    const choreControl = document.getElementById("chore-control");
+
+    
+    // route to appropriate pages
+    homeView.addEventListener("click", function(){
+        window.location.replace("home_view.php")
+    });
+
+    choreControl.addEventListener("click", function(){
+        window.location.replace("chore_control_view.php")
+    });
+
     addChoreButton.addEventListener("click", function() {
         popUpBox.style.visibility = "visible";
         overlay.style.visibility = "visible";
@@ -153,6 +166,6 @@
     closePopUp.addEventListener("click", function(){
         popUpBox.style.visibility = "hidden";
         overlay.style.visibility = "hidden";
-    })
+    });
 </script>
 </html>
