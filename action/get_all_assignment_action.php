@@ -19,7 +19,7 @@
     }
 
     // Get assignments that are being done
-    function get_assingments_inprogress(){
+    function get_assignments_inprogress(){
         global $conn;
 
         $sql = "SELECT * FROM assignment WHERE sid = 2 AND CURDATE() < date_due";
