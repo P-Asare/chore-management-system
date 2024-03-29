@@ -3,7 +3,7 @@
     include("../settings/core.php");
 
     if(get_role_id() == 2){
-        echo "You can't. you're not allowed";
+        header("Location: ../admin/assign-chore-view.php?del=failed");
         exit();
     }
 
