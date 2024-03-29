@@ -157,9 +157,9 @@
             if (isset($_GET['msg']) && $_GET['msg'] == 'inerror'){
                 echo "swal('Error','Can't add chore', 'error');";
             }
-            // if(isset($_GET['msg']) && $_GET['msg'] == 'dcerror'){
-            //     echo "swal('Error', 'Can't delete chore', 'error');";
-            // }
+            if(isset($_GET['del']) && $_GET['del'] == 'failed'){
+                echo "swal('Error','You are not authorised to delete', 'error');";
+            }
         ?>
     })
 

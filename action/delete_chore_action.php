@@ -1,5 +1,11 @@
 <?php
     include("../settings/connection.php");
+    include("../settings/core.php");
+
+    if(get_role_id() == 2){
+        header("Location: ../admin/chore_control_view.php?del=failed");
+        exit();
+    }
 
     if (isset($_GET['id'])){
 
