@@ -60,6 +60,7 @@
                 
             </div>
         </div>
+        
     </div>
     <div class="main-pane">
         <div class="header">
