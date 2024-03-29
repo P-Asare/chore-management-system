@@ -62,8 +62,14 @@
                     <div><a id="back-yard" href="#">Back Yard</a></div>
                 </div>
                 
-            </div>
+            </div>   
         </div>
+        <a href="../login/logout_view.php" style="color: black;">
+            <div style="padding-left: 20px;" class="material-symbols-outlined">
+                logout 
+                <span style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; margin-top: -10px;">Logout</span>
+            </div>
+        </a>
     </div>
     <div class="main-pane">
         <div class="header">
