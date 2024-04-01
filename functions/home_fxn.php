@@ -4,7 +4,8 @@
     include("../action/get_a_person_action.php");
     include("../action/get_user_assignment_action.php");
 
-    $user_id = $_SESSION['user-id'];
+    // $user_id = $_SESSION['user-id'];
+    $user_id = 5;
 
     // For admin view
     $all_assignments = get_all_assignments();
@@ -14,7 +15,10 @@
     $recent = get_recent_assignments();
 
     // For user view
-    $all_user_assignments = get_all_user_assignments(5);
+    $all_user_assignments = get_all_user_assignments($user_id);
+    $user_incomplete = get_user_incomplete_assignments($user_id);
+    $user_complete = get_user_completed_assignments($user_id);
+    // $user_in_progress = get_user_assignments_inprogress($user_id);
 
     // display assignments in view based on assignment array passed in
     function list_assignments($assignments){
