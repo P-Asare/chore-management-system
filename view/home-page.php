@@ -1,6 +1,7 @@
 <?php
     include("../settings/core.php");
     check_login();
+    include("../functions/home_fxn.php");
 
     if(get_role_id() != 3){
         header("Location: ../admin/home_view.php");
@@ -80,86 +81,41 @@
                     <div class="chore-column">
                         <div class="line"><hr></div>
                         <div class="name-count">
-                            <div class="name"><p>ToDo</p></div>
-                            <div class="count"><p>2</p></div>
+                            <div class="name"><p>Inprogress</p></div>
+                            <div class="count"><p><?php echo ($all_user_assignments === null) ? 0 : count($all_user_assignments); ?></p></div>
                         </div>
                         <div><img src="../icons/mdi_add.svg" alt=""></div>
                     </div>
-                    <div class="chore-task">
-                        <div class="details">
-                            <div><p class="name">Palal Asare > Chores</p></div>
-                            <div><p class="desc">Scrub Cabinets, top to bottom</p></div>
-                            <div><img style="opacity: 0.5" src="../icons/tabler_flag-filled.svg" alt="picture of flag"></div>
-                        </div>
-                        <div class="color" style="background-color: #ffd3331f">
-                        </div>
-                    </div>
-                    <div class="chore-task">
-                        <div class="details">
-                            <div><p class="name">Palal Asare > Chores</p></div>
-                            <div><p class="desc">Sweep,floors</p></div>
-                            <div><img style="opacity: 0.4" src="../icons/tabler_flag-filled.svg" alt="picture of flag"></div>
-                        </div>
-                        <div class="color" style="background-color: #b9bff825">
-                        </div>
-                    </div>
+                    <?php
+                        list_assignments($all_user_assignments);
+                    ?>
     
                 </div>
                 <div class="col-two">
                     <div class="chore-column">
                         <div class="line"><hr></div>
                         <div class="name-count">
-                            <div class="name"><p>InProgress</p></div>
-                            <div class="count"><p>1</p></div>
+                            <div class="name"><p>Incomplete</p></div>
+                            <div class="count"><p><?php echo ($user_incomplete === null) ? 0 : count($user_incomplete); ?></p></div>
                         </div>
                         <div><img src="../icons/mdi_add.svg" alt=""></div>
                     </div>
-                    <div class="chore-task">
-                        <div class="details">
-                            <div><p class="name">Palal Asare > Chores</p></div>
-                            <div><p class="desc">Cleanfloor</p></div>
-                            <div><img style="opacity: 0.5" src="../icons/tabler_flag-filled.svg" alt="picture of flag"></div>
-                        </div>
-                        <div class="color" style="background-color: #ffd3331f">
-                        </div>
-                    </div>
+                    <?php
+                        list_assignments($user_incomplete);
+                    ?>
                 </div>
                 <div class="col-three">
                     <div class="chore-column">
                         <div class="line"><hr></div>
                         <div class="name-count">
-                            <div class="name"><p>Closed</p></div>
-                            <div class="count"><p>3</p></div>
+                            <div class="name"><p>Completed</p></div>
+                            <div class="count"><p><?php echo ($user_complete === null) ? 0 : count($user_complete); ?></p></div>
                         </div>
                         <div><img src="../icons/mdi_add.svg" alt=""></div>
                     </div>
-                    <div class="chore-task">
-                        <div class="details">
-                            <div><p class="name">Palal Asare > Chores</p></div>
-                            <div><p class="desc">Cleanfloor</p></div>
-                            <div><img style="opacity: 0.5" src="../icons/tabler_flag-filled.svg" alt="picture of flag"></div>
-                        </div>
-                        <div class="color" style="background-color: #ffd3331f">
-                        </div>
-                    </div>
-                    <div class="chore-task">
-                        <div class="details">
-                            <div><p class="name">Palal Asare > Chores</p></div>
-                            <div><p class="desc">Cleanfloor</p></div>
-                            <div><img style="opacity: 0.5" src="../icons/tabler_flag-filled.svg" alt="picture of flag"></div>
-                        </div>
-                        <div class="color" style="background-color: #ffd3331f">
-                        </div>
-                    </div>
-                    <div class="chore-task">
-                        <div class="details">
-                            <div><p class="name">Palal Asare > Chores</p></div>
-                            <div><p class="desc">Cleanfloor</p></div>
-                            <div><img style="opacity: 0.5" src="../icons/tabler_flag-filled.svg" alt="picture of flag"></div>
-                        </div>
-                        <div class="color" style="background-color: #ffd3331f">
-                        </div>
-                    </div>
+                    <?php
+                        list_assignments($user_complete);
+                    ?>
                 </div>
             </div>
         </div>
