@@ -80,7 +80,7 @@
                     <div class="chore-column">
                         <div class="line"><hr></div>
                         <div class="name-count">
-                            <div class="name"><p>ToDo</p></div>
+                            <div class="name"><p>Inprogress</p></div>
                             <div class="count"><p>2</p></div>
                         </div>
                         <div><img src="../icons/mdi_add.svg" alt=""></div>
@@ -109,7 +109,7 @@
                     <div class="chore-column">
                         <div class="line"><hr></div>
                         <div class="name-count">
-                            <div class="name"><p>InProgress</p></div>
+                            <div class="name"><p>Incomplete</p></div>
                             <div class="count"><p>1</p></div>
                         </div>
                         <div><img src="../icons/mdi_add.svg" alt=""></div>
@@ -128,7 +128,7 @@
                     <div class="chore-column">
                         <div class="line"><hr></div>
                         <div class="name-count">
-                            <div class="name"><p>Closed</p></div>
+                            <div class="name"><p>Completed</p></div>
                             <div class="count"><p>3</p></div>
                         </div>
                         <div><img src="../icons/mdi_add.svg" alt=""></div>
