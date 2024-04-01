@@ -4,8 +4,7 @@
     include("../action/get_a_person_action.php");
     include("../action/get_user_assignment_action.php");
 
-    // $user_id = $_SESSION['user-id'];
-    $user_id = 5;
+    $user_id = $_SESSION['user-id'];
 
     // For admin view
     $all_assignments = get_all_assignments();
