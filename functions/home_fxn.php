@@ -2,12 +2,19 @@
     include("../action/get_all_assignment_action.php");
     include("../action/get_a_chore_action.php");
     include("../action/get_a_person_action.php");
+    include("../action/get_user_assignment_action.php");
 
+    $user_id = $_SESSION['user-id'];
+
+    // For admin view
     $all_assignments = get_all_assignments();
     $in_progress = get_assignments_inprogress();
     $incomplete = get_incomplete_assignments();
     $complete = get_completed_assignments();
     $recent = get_recent_assignments();
+
+    // For user view
+    $all_user_assignments = get_all_user_assignments(5);
 
     // display assignments in view based on assignment array passed in
     function list_assignments($assignments){
