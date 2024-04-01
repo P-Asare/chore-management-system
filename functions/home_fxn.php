@@ -4,6 +4,10 @@
     include("../action/get_a_person_action.php");
     include("../action/get_user_assignment_action.php");
 
+    if(session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    
     $user_id = $_SESSION['user-id'];
 
     // For admin view
