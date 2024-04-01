@@ -63,6 +63,12 @@
                 
             </div>
         </div>
+        <a href="../login/logout_view.php" style="color: black;">
+            <div style="padding-left: 20px;" class="material-symbols-outlined">
+                logout 
+                <span style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; margin-top: -10px;">Logout</span>
+            </div>
+        </a>
     </div>
     <div class="main-pane">
         <div class="header">
@@ -151,9 +157,9 @@
             if (isset($_GET['msg']) && $_GET['msg'] == 'inerror'){
                 echo "swal('Error','Can't add chore', 'error');";
             }
-            // if(isset($_GET['msg']) && $_GET['msg'] == 'dcerror'){
-            //     echo "swal('Error', 'Can't delete chore', 'error');";
-            // }
+            if(isset($_GET['del']) && $_GET['del'] == 'failed'){
+                echo "swal('Error','You are not authorised to delete', 'error');";
+            }
         ?>
     })
 

@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slaveme</title>
     <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
     <div class="side-pane">
@@ -60,6 +61,14 @@
                 
             </div>
         </div>
+        <a href="../login/logout_view.php" style="color: black;">
+            <div style="padding-left: 20px;" class="material-symbols-outlined">
+                logout 
+                <span style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; margin-top: -10px;">Logout</span>
+            </div>
+        </a>
+        
+        
     </div>
     <div class="main-pane">
         <div class="header">

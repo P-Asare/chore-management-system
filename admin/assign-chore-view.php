@@ -19,6 +19,7 @@
     <title>Slaveme</title>
     <link rel="stylesheet" href="../css/admin-assignment.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src='https://unpkg.com/sweetalert/dist/sweetalert.min.js'></script>
 </head>
 <body>
     <div class="overlay" id="overlay">&nbsp;</div>
@@ -62,8 +63,14 @@
                     <div><a id="back-yard" href="#">Back Yard</a></div>
                 </div>
                 
-            </div>
+            </div>   
         </div>
+        <a href="../login/logout_view.php" style="color: black;">
+            <div style="padding-left: 20px;" class="material-symbols-outlined">
+                logout 
+                <span style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; margin-top: -10px;">Logout</span>
+            </div>
+        </a>
     </div>
     <div class="main-pane">
         <div class="header">
@@ -144,6 +151,14 @@
     </div>
 </body>
 <script>
+    document.addEventListener("DOMContentLoaded", function (){
+        <?php
+            if (isset($_GET['del']) && $_GET['del'] == 'failed'){
+                echo "swal('Error','You are not authorised to delete', 'error');";
+            }
+        ?>
+    })
+
     let addChoreButton = document.getElementById("assign-chore");
     let popUpBox = document.getElementById("pop");
     let overlay = document.getElementById("overlay");
